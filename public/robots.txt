@@ -1,0 +1,8 @@
+# Sky9 India Robots.txt
+User-agent: *
+Allow: /
+Disallow: /scratch/
+Disallow: /*?*
+
+# XML Sitemap Location
+Sitemap: https://sky9india.com/sitemap.xml

@@ -127,7 +127,7 @@ export default function Navbar() {
           : 'h-20 bg-transparent border-b border-transparent'
       }`}
     >
-      <div ref={navRef} className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+      <div ref={navRef} className="relative w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
         {/* Logo - Far Left */}
         <Link to="/" className="flex items-center shrink-0 pr-4 group">
           <img
@@ -138,7 +138,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation - Clean Horizontal Layout */}
-        <nav className="hidden lg:flex items-center gap-4 xl:gap-5 2xl:gap-6 whitespace-nowrap" aria-label="Main Navigation">
+        <nav className="hidden xl:flex self-stretch items-center gap-3.5 2xl:gap-6 whitespace-nowrap" aria-label="Main Navigation">
           {headerNavigation.filter((item) => item.path !== '/contact-us').map((item, idx) => {
             const isCurrentActive = item.path === '/'
               ? location.pathname === '/'
@@ -149,7 +149,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   to={item.path}
-                  className={`relative text-[13px] xl:text-sm font-medium transition-colors py-2 whitespace-nowrap ${
+                  className={`relative text-[13px] 2xl:text-sm font-medium transition-colors py-2 whitespace-nowrap ${
                     isCurrentActive
                       ? 'text-emerald-500 font-semibold'
                       : 'text-slate-700 dark:text-slate-200 hover:text-emerald-500 dark:hover:text-emerald-400'
@@ -172,7 +172,7 @@ export default function Navbar() {
             return (
               <div
                 key={item.label}
-                className="relative"
+                className={item.type === 'megamenu' ? 'static self-stretch flex items-center' : 'relative'}
                 onMouseEnter={() => setActiveDropdown(item.label)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
@@ -180,7 +180,7 @@ export default function Navbar() {
                   onClick={() => setActiveDropdown(isOpen ? null : item.label)}
                   onFocus={() => setActiveDropdown(item.label)}
                   aria-expanded={isOpen}
-                  className={`relative flex items-center gap-1 text-[13px] xl:text-sm font-medium transition-colors py-2 whitespace-nowrap ${
+                  className={`relative flex items-center gap-1 text-[13px] 2xl:text-sm font-medium transition-colors py-2 whitespace-nowrap ${
                     isOpen || isCurrentActive
                       ? 'text-emerald-500 font-semibold'
                       : 'text-slate-700 dark:text-slate-200 hover:text-emerald-500 dark:hover:text-emerald-400'
@@ -205,7 +205,7 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.98 }}
                       transition={{ duration: 0.18, ease: 'easeOut' }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 w-[1040px] max-w-[95vw] bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-slate-200/90 dark:border-slate-800 shadow-2xl rounded-2xl overflow-hidden mt-1 p-6 grid grid-cols-4 gap-6 whitespace-normal text-slate-900 dark:text-white"
+                      className="absolute top-full left-1/2 -translate-x-1/2 w-[min(1040px,calc(100vw-2rem))] bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-slate-200/90 dark:border-slate-800 shadow-2xl rounded-2xl overflow-hidden p-6 grid grid-cols-4 gap-6 whitespace-normal text-slate-900 dark:text-white"
                     >
                       {item.columns?.map((col) => {
                         const ColIcon = col.icon;
@@ -257,7 +257,7 @@ export default function Navbar() {
                       exit={{ opacity: 0, y: 10, scale: 0.98 }}
                       transition={{ duration: 0.18, ease: 'easeOut' }}
                       className={`absolute top-full ${
-                        idx > 5 ? 'right-0' : 'left-0'
+                        idx >= 4 ? 'right-0' : 'left-0'
                       } w-[385px] max-w-[90vw] bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-slate-200/90 dark:border-slate-800 shadow-2xl rounded-2xl overflow-hidden mt-1 p-3 space-y-1`}
                     >
                       {item.items?.map((subItem) => {
@@ -296,7 +296,7 @@ export default function Navbar() {
         </nav>
 
         {/* Right Actions: Theme Toggle | Contact | Log In | Enroll Now */}
-        <div className="hidden lg:flex items-center gap-2.5 xl:gap-3.5 shrink-0 pl-3">
+        <div className="hidden xl:flex items-center gap-2.5 2xl:gap-3.5 shrink-0 pl-3">
           {/* Animated Theme Toggle Button */}
           <motion.button
             whileTap={{ scale: 0.9 }}
@@ -320,7 +320,7 @@ export default function Navbar() {
 
           <Link
             to="/contact-us"
-            className="text-[13px] xl:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors px-1.5 py-1 whitespace-nowrap"
+            className="text-[13px] 2xl:text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors px-1.5 py-1 whitespace-nowrap"
           >
             Contact Us
           </Link>
@@ -328,14 +328,14 @@ export default function Navbar() {
           <button
             type="button"
             onClick={openLoginModal}
-            className="px-4 xl:px-5 py-2 rounded-full border border-slate-300/90 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 font-medium text-[13px] xl:text-sm transition hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap cursor-pointer"
+            className="px-4 2xl:px-5 py-2 rounded-full border border-slate-300/90 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 font-medium text-[13px] 2xl:text-sm transition hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap cursor-pointer"
           >
             Log In
           </button>
 
           <Link
             to="/contact-us"
-            className="btn-shimmer group inline-flex items-center gap-2 px-4 xl:px-5 py-2 bg-emerald-500 hover:bg-emerald-600 text-white font-medium text-[13px] xl:text-sm rounded-full transition shadow-sm hover:shadow-md hover:shadow-emerald-500/25 hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap"
+            className="btn-shimmer group inline-flex items-center gap-2 px-4 2xl:px-5 py-2 bg-emerald-500 hover:bg-emerald-600 text-white font-medium text-[13px] 2xl:text-sm rounded-full transition shadow-sm hover:shadow-md hover:shadow-emerald-500/25 hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap"
           >
             <span>Enroll Now</span>
             <span className="w-5 h-5 rounded-full bg-white/25 flex items-center justify-center transition-transform duration-200 group-hover:translate-x-0.5">
@@ -345,7 +345,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Hamburger & Theme Toggle */}
-        <div className="flex lg:hidden items-center gap-2">
+        <div className="flex xl:hidden items-center gap-2">
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={toggleTheme}
@@ -370,7 +370,7 @@ export default function Navbar() {
     {/* Mobile Drawer Overlay, Rendered as sibling outside motion.header for reliable full-screen fixed positioning */}
     <AnimatePresence>
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-[999] lg:hidden" aria-modal="true" role="dialog">
+        <div className="fixed inset-0 z-[999] xl:hidden" aria-modal="true" role="dialog">
           {/* Dimmed & Blurred Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}

@@ -112,7 +112,7 @@ export default function ResourcesPage() {
       />
 
       {/* Main Content */}
-      <section className="py-8 sm:py-10 md:py-14 dark:bg-dark-bg bg-light-bg">
+      <section id="resources-grid" className="scroll-mt-24 py-8 sm:py-10 md:py-14 dark:bg-dark-bg bg-light-bg">
         <div className="max-w-7xl mx-auto px-4 space-y-8 sm:space-y-10">
           {/* Resource Categories Grid */}
           {!resourceType && (

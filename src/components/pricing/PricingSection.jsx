@@ -45,7 +45,7 @@ export function PricingCard({
         <>
           {/* Top glowing accent stripe */}
           <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-400 rounded-t-2xl" />
-          <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap z-20">
+          <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 max-w-[90%] text-center whitespace-normal sm:whitespace-nowrap z-20">
             <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-emerald-500 text-white shadow-md shadow-emerald-500/30">
               <Sparkles className="w-3 h-3" /> Most Popular Program
             </span>

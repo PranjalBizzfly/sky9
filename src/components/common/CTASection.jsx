@@ -20,7 +20,17 @@ const CTASection = ({
   const { openLeadModal } = useLead();
 
   const handlePrimaryClick = (e) => {
-    if (primaryLink === '/contact-us' || primaryLink === '#enquire' || !primaryLink) {
+    // A router <Link> only updates the URL for "#id" targets, so scroll to the
+    // on-page section ourselves; fall back to the lead modal if it isn't there.
+    if (primaryLink?.startsWith('#')) {
+      const target = document.getElementById(primaryLink.slice(1));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+    }
+    if (primaryLink === '/contact-us' || primaryLink === '#enquiry' || !primaryLink) {
       e.preventDefault();
       openLeadModal({
         course: courseName,

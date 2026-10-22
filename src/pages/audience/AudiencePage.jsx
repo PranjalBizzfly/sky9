@@ -141,7 +141,7 @@ export default function AudiencePage({ audienceSlug: audienceSlugProp } = {}) {
           </div>
 
           {/* Recommended Courses Grid */}
-          <div>
+          <div id="recommended-courses" className="scroll-mt-24">
             <SectionHeader
               badge="Recommended Programs"
               title="Best Courses For Your Learning Path"

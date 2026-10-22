@@ -77,7 +77,7 @@ function MobileAccordionSection({ title, items }) {
             <li key={idx}>
               <Link
                 to={item.path}
-                className="text-[11.5px] text-slate-400 hover:text-emerald-400 transition-colors block py-0.5 truncate"
+                className="text-[11.5px] text-slate-400 hover:text-emerald-400 transition-colors block py-0.5 break-words leading-snug"
               >
                 • {item.label}
               </Link>
@@ -200,7 +200,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <a href={`mailto:${safeCompany.email}`} className="text-xs text-slate-300 hover:text-emerald-400 transition-colors">
+                <a href={`mailto:${safeCompany.email}`} className="break-all text-xs text-slate-300 hover:text-emerald-400 transition-colors">
                   {safeCompany.email}
                 </a>
               </div>
@@ -324,7 +324,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2 text-slate-300">
                 <Mail className="w-3.5 h-3.5 text-emerald-400" />
-                <a href={`mailto:${safeCompany.email}`} className="hover:text-emerald-400">{safeCompany.email}</a>
+                <a href={`mailto:${safeCompany.email}`} className="break-all hover:text-emerald-400">{safeCompany.email}</a>
               </div>
             </div>
             <Link
@@ -366,10 +366,10 @@ export default function Footer() {
             <div className="grid grid-cols-2 gap-2 w-full pt-2">
               <a
                 href={`tel:${safeCompany.phone.replace(/\s+/g, '')}`}
-                className="flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-slate-900 border border-slate-800 text-[11.5px] font-semibold text-emerald-400 hover:border-emerald-500/50 transition-colors"
+                className="flex items-center justify-center gap-1.5 py-2 px-2 sm:px-3 rounded-xl bg-slate-900 border border-slate-800 text-[11px] min-[360px]:text-[11.5px] font-semibold text-emerald-400 hover:border-emerald-500/50 transition-colors"
               >
                 <Phone className="w-3.5 h-3.5 shrink-0" />
-                <span className="truncate">{safeCompany.phone}</span>
+                <span className="whitespace-nowrap">{safeCompany.phone}</span>
               </a>
               <a
                 href={`mailto:${safeCompany.email}`}

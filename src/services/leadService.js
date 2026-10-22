@@ -162,7 +162,8 @@ class LeadService {
     if (typeof window !== 'undefined' && window.dataLayer) {
       window.dataLayer.push({ event: eventName, ...payload });
     }
-    console.log(`[LeadAnalytics] Event: ${eventName}`, payload);
+    // Dev-only: the payload carries the visitor's name, email and phone.
+    if (import.meta.env.DEV) console.log(`[LeadAnalytics] Event: ${eventName}`, payload);
   }
 
   // Get lead submission history

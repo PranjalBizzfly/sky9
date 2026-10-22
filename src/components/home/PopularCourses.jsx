@@ -6,6 +6,25 @@ import SectionLabel from '../common/SectionLabel';
 // 5 Core Sky9 Courses aligned with reference structure & data requirements
 const courseCardsData = [
   {
+    id: 'software-testing',
+    slug: 'software-testing',
+    title: 'Software Testing Training',
+    description: 'Learn testing tools and techniques to build quality software and start a career in QA.',
+    duration: '4-6 Months',
+    fee: '₹35,000/-',
+    mode: 'Online & Offline',
+    certificate: 'Certificate of Completion',
+    category: 'Technical',
+    iconColor: 'bg-blue-600/15 text-blue-600 dark:bg-blue-600/20 dark:text-blue-400',
+    iconType: 'code',
+    learningAreas: [
+      'Manual & STLC Fundamentals',
+      'Functional & Regression Testing',
+      'Test Cases & Documentation',
+      'Jira Bug Tracking & Sprints'
+    ]
+  },
+  {
     id: 'digital-marketing',
     slug: 'digital-marketing',
     title: 'Digital Marketing Training',
@@ -22,25 +41,6 @@ const courseCardsData = [
       'Social Media Marketing',
       'Google Ads & Meta Ads',
       'Lead Generation & Analytics'
-    ]
-  },
-  {
-    id: 'digital-marketing-for-business-owners',
-    slug: 'digital-marketing-for-business-owners',
-    title: 'Digital Marketing for Business Owners',
-    description: 'Build your online presence, get more leads and grow your business with proven digital strategies.',
-    duration: '7 Days',
-    fee: '₹7,000/-',
-    mode: 'Online & Offline',
-    certificate: 'Certificate of Completion',
-    category: 'Business',
-    iconColor: 'bg-emerald-500/15 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-400',
-    iconType: 'chart',
-    learningAreas: [
-      'Automated Lead Funnels',
-      'Google Maps Visibility',
-      'Local Social Media Ads',
-      'Customer Acquisition'
     ]
   },
   {
@@ -62,53 +62,15 @@ const courseCardsData = [
       'No-Code Workflow Zapier',
       'AI Business Applications'
     ]
-  },
-  {
-    id: 'software-testing',
-    slug: 'software-testing',
-    title: 'Software Testing Training',
-    description: 'Learn testing tools and techniques to build quality software and start a career in QA.',
-    duration: '4-6 Months',
-    fee: '₹35,000/-',
-    mode: 'Online & Offline',
-    certificate: 'Certificate of Completion',
-    category: 'Technical',
-    iconColor: 'bg-blue-600/15 text-blue-600 dark:bg-blue-600/20 dark:text-blue-400',
-    iconType: 'code',
-    learningAreas: [
-      'Manual & STLC Fundamentals',
-      'Functional & Regression Testing',
-      'Test Cases & Documentation',
-      'Jira Bug Tracking & Sprints'
-    ]
-  },
-  {
-    id: 'erp',
-    slug: 'erp',
-    title: 'ERP Training',
-    description: 'Get hands-on training in ERP systems and learn how to manage business processes effectively.',
-    duration: '7-8 Days',
-    fee: 'As Applicable',
-    mode: 'Online & Offline',
-    certificate: 'Certificate of Completion',
-    category: 'Business',
-    iconColor: 'bg-teal-500/15 text-teal-600 dark:bg-teal-500/20 dark:text-teal-400',
-    iconType: 'database',
-    learningAreas: [
-      'ERP Architecture Basics',
-      'Business Process Mapping',
-      'Purchase, Sales & Inventory',
-      'Operations Management'
-    ]
   }
 ];
 
+// "Business" tab removed along with its two cards (Business Owners, ERP).
 const categories = [
   'All Courses',
   'Digital Marketing',
   'AI & Automation',
-  'Technical',
-  'Business'
+  'Technical'
 ];
 
 export default function PopularCourses() {
@@ -120,7 +82,6 @@ export default function PopularCourses() {
         if (activeTab === 'Digital Marketing') return c.category === 'Digital Marketing' || c.id === 'digital-marketing';
         if (activeTab === 'AI & Automation') return c.category === 'AI & Automation';
         if (activeTab === 'Technical') return c.category === 'Technical' || c.id === 'ai-automation' || c.id === 'software-testing';
-        if (activeTab === 'Business') return c.category === 'Business';
         return true;
       });
 

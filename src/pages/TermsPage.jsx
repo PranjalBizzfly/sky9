@@ -273,7 +273,7 @@ export default function TermsPage() {
                 If you have any questions about these Terms & Conditions, please reach out to us:
               </p>
               <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-x-6 sm:gap-y-2 text-sm">
-                <a href={`mailto:${companyInfo.email}`} className="font-semibold hover:underline whitespace-nowrap">
+                <a href={`mailto:${companyInfo.email}`} className="font-semibold hover:underline break-all">
                   {companyInfo.email}
                 </a>
                 <a href={`tel:${companyInfo.phone.replace(/\s+/g, '')}`} className="font-semibold hover:underline whitespace-nowrap">

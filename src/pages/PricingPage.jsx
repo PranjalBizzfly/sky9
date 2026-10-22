@@ -56,7 +56,9 @@ export default function PricingPage() {
       />
 
       {/* Pricing Cards Grid */}
-      <PricingSection courses={courses} />
+      <div id="plans" className="scroll-mt-24">
+        <PricingSection courses={courses} />
+      </div>
 
       {/* Program Comparison Section */}
       <section className="py-8 sm:py-10 md:py-12 dark:bg-slate-900/50 bg-slate-50 border-t border-b dark:border-slate-800 border-slate-200">

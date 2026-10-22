@@ -62,10 +62,6 @@ export default function CoursesHubPage() {
         imageWebp={heroImages.coursesHub.webp}
         imageAlt={heroImages.coursesHub.alt}
         imagePosition={heroImages.coursesHub.pos}
-        primaryAction={{
-          label: 'View All 5 Tracks',
-          href: '#courses-grid'
-        }}
         secondaryAction={{
           label: 'Book Counseling',
           to: '/contact-us'

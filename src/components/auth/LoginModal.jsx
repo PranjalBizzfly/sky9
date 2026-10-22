@@ -60,7 +60,7 @@ export default function LoginModal() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-          className="relative w-full max-w-4xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden z-10 grid grid-cols-1 md:grid-cols-12 max-h-[92vh] overflow-y-auto"
+          className="relative w-full max-w-4xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 z-10 grid grid-cols-1 md:grid-cols-12 max-h-[92vh] overflow-y-auto"
         >
           {/* Close Button Top Right */}
           <button

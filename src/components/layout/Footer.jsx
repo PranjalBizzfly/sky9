@@ -503,11 +503,16 @@ export default function Footer() {
         <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-400">
           <p className="text-center md:text-left">
             Copyright © {new Date().getFullYear()} {safeCompany.shortName} India. All rights reserved.
+            <span className="block sm:inline sm:ml-2 mt-1 sm:mt-0 font-semibold text-slate-200">
+              Made with{' '}
+              <a href="https://mengo.si/" target="_blank" rel="noopener noreferrer" className="font-bold text-emerald-400 underline underline-offset-2 hover:text-emerald-300 transition-colors">Mengo.si</a>
+            </span>
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 text-[12.5px]">
             <Link to="/pricing" className="hover:text-emerald-400 transition-colors">Course Fees & Pricing</Link>
             <Link to="/locations" className="hover:text-emerald-400 transition-colors">Locations</Link>
-            <Link to="/resources/visual-sitemap-directory" className="hover:text-emerald-400 transition-colors">Sitemap</Link>
+            {/* Plain <a>, not a router <Link>: the XML sitemap is a static file, not an app route. */}
+            <a href="https://sky9india.com/sitemap.xml" className="hover:text-emerald-400 transition-colors">Sitemap</a>
             <Link to="/terms-and-conditions" className="hover:text-emerald-400 transition-colors">Terms & Conditions</Link>
             <Link to="/contact-us" className="hover:text-emerald-400 transition-colors">Contact Us</Link>
           </div>

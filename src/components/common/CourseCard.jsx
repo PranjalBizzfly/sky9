@@ -2,12 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
-  Clock, IndianRupee, Monitor, Award, ArrowRight, Check, Megaphone, 
+  Clock, Monitor, Award, ArrowRight, Check, Megaphone, 
   TrendingUp, Cpu, Code2, Database, Sparkles 
 } from 'lucide-react';
 import SpotlightCard from './animations/SpotlightCard';
 import BorderBeam from './animations/BorderBeam';
 import contentRepository from '../../services/contentRepository';
+import { CoursePriceBlock } from '../pricing/CoursePrice';
 
 const iconMap = {
   megaphone: Megaphone,
@@ -92,9 +93,12 @@ export default function CourseCard({ course, index = 0 }) {
           </h3>
 
           {/* Description */}
-          <p className="text-sm text-slate-700 dark:text-slate-300 mb-5 leading-relaxed min-h-[2.75rem] line-clamp-2 font-normal">
+          <p className="text-sm text-slate-700 dark:text-slate-300 mb-4 leading-relaxed min-h-[2.75rem] line-clamp-2 font-normal">
             {description}
           </p>
+
+          {/* Course Fee, highlighted near the top of the card */}
+          <CoursePriceBlock fee={fee} className="mb-4 min-h-[6.75rem]" />
 
           {/* Metadata Rows */}
           <div className="space-y-2.5 py-3.5 border-t border-b border-slate-200/80 dark:border-slate-800/80 text-xs sm:text-[13px] mb-5">
@@ -105,15 +109,6 @@ export default function CourseCard({ course, index = 0 }) {
                 <span>Duration</span>
               </span>
               <span className="font-bold text-slate-900 dark:text-white">{duration}</span>
-            </div>
-
-            {/* Course Fee */}
-            <div className="flex items-center justify-between">
-              <span className="flex items-center gap-1.5 text-slate-600 dark:text-slate-400 font-medium">
-                <IndianRupee className="w-4 h-4 text-emerald-500 dark:text-emerald-400 shrink-0" />
-                <span>Course Fee</span>
-              </span>
-              <span className="font-extrabold text-emerald-600 dark:text-emerald-400 text-sm">{fee}</span>
             </div>
 
             {/* Mode */}

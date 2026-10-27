@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Check, X, ArrowRight, BookOpen } from 'lucide-react';
 import Button from '../ui/Button';
 import contentRepository from '../../services/contentRepository';
+import CoursePrice from './CoursePrice';
 
 export default function CourseComparisonTable({ courses = [] }) {
   if (!courses || courses.length === 0) return null;
@@ -36,7 +37,9 @@ export default function CourseComparisonTable({ courses = [] }) {
                 </Link>
               </td>
               <td className="p-4 dark:text-slate-300 text-slate-700">{course.duration || 'Flexible'}</td>
-              <td className="p-4 font-bold text-emerald-600 dark:text-emerald-400">{course.fee || 'Enquire'}</td>
+              <td className="p-4">
+                <CoursePrice fee={course.fee || 'Enquire'} className="font-bold text-emerald-600 dark:text-emerald-400" />
+              </td>
               <td className="p-4 dark:text-slate-300 text-slate-700">{course.mode || 'Online & Offline'}</td>
               <td className="p-4 text-center">
                 <Check className="w-5 h-5 text-emerald-500 mx-auto" />

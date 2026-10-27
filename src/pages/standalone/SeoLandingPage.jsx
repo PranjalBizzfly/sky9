@@ -12,6 +12,7 @@ import ProcessSection, { studentWorkflow } from '../../components/workflow/Proce
 import FAQSection from '../../components/common/FAQSection';
 import SeoHead from '../../components/common/SeoHead';
 import PageHero from '../../components/common/PageHero';
+import { CoursePriceBlock } from '../../components/pricing/CoursePrice';
 
 export default function SeoLandingPage() {
   const location = useLocation();
@@ -111,7 +112,8 @@ export default function SeoLandingPage() {
               <div>
                 <span className="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Associated Practical Program</span>
                 <h3 className="text-2xl font-bold font-heading mt-1">{relatedCourse.title}</h3>
-                <p className="text-sm text-slate-300 mt-1">{relatedCourse.duration} • {relatedCourse.fee} • {relatedCourse.mode}</p>
+                <p className="text-sm text-slate-300 mt-1">{relatedCourse.duration} • {relatedCourse.mode}</p>
+                <CoursePriceBlock fee={relatedCourse.fee} tone="onDark" className="mt-4 inline-block min-w-[12rem]" />
               </div>
               <Link
                 to={contentRepository.getCourseUrl(relatedCourse.slug)}

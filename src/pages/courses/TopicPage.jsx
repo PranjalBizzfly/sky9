@@ -9,6 +9,7 @@ import EnquiryForm from '../../components/common/EnquiryForm';
 import SeoHead from '../../components/common/SeoHead';
 import PageHero from '../../components/common/PageHero';
 import CTASection from '../../components/common/CTASection';
+import { CoursePriceBlock } from '../../components/pricing/CoursePrice';
 
 export default function TopicPage({ courseSlug: courseSlugProp } = {}) {
   const { courseSlug: courseSlugParam, topicSlug } = useParams();
@@ -129,11 +130,9 @@ export default function TopicPage({ courseSlug: courseSlugProp } = {}) {
                   <p className="text-sm dark:text-slate-400 text-slate-500 mt-1">{parentCourse.duration} • {parentCourse.mode}</p>
                 </div>
 
+                <CoursePriceBlock fee={parentCourse.fee} />
+
                 <div className="space-y-3 text-sm">
-                  <div className="flex justify-between items-center text-slate-600 dark:text-slate-300">
-                    <span>Course Fee:</span>
-                    <span className="font-bold dark:text-white text-slate-900">{parentCourse.fee}</span>
-                  </div>
                   <div className="flex justify-between items-center text-slate-600 dark:text-slate-300">
                     <span>Internship:</span>
                     <span className="font-semibold text-emerald-500">1-Month Included</span>

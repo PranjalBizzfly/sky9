@@ -8,6 +8,7 @@ import SectionLabel from '../common/SectionLabel';
 import { useLead } from '../../context/LeadContext';
 import { getCourseHeroImage, heroImages } from '../../data/heroImages';
 import TypewriterHeading from '../common/animations/TypewriterHeading';
+import CoursePrice from '../pricing/CoursePrice';
 
 const fadeInUp = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } };
 
@@ -114,7 +115,7 @@ export default function CourseHero({ course, breadcrumbs = [] }) {
             {course.fee && (
               <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-900/80 backdrop-blur-md border border-slate-700/80 text-xs sm:text-sm text-slate-200">
                 <IndianRupee className="w-4 h-4 text-emerald-400" />
-                <span className="font-bold text-white">{course.fee}</span>
+                <CoursePrice fee={course.fee} className="font-bold text-white" tone="onDark" />
               </div>
             )}
             {course.mode && (

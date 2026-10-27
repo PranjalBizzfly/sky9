@@ -3,6 +3,7 @@ import { Check, Clock, IndianRupee, Monitor, Award, Briefcase, ArrowRight, Spark
 import Button from '../ui/Button';
 import SectionLabel from '../common/SectionLabel';
 import { useLead } from '../../context/LeadContext';
+import CoursePrice from './CoursePrice';
 
 export function PricingCard({
   course = {},
@@ -72,8 +73,14 @@ export function PricingCard({
               <div className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                 Total Course Fee
               </div>
-              <div className="text-3xl font-black text-slate-900 dark:text-white font-heading tracking-tight mt-0.5">
-                {fee}
+              <div className="mt-0.5">
+                <CoursePrice
+                  fee={fee}
+                  className="text-3xl font-black text-slate-900 dark:text-white font-heading tracking-tight"
+                  strikeClassName="text-lg"
+                  stacked
+                  align="start"
+                />
               </div>
             </div>
             <div className="text-right">

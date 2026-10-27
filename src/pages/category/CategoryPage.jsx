@@ -8,6 +8,7 @@ import CTASection from '../../components/common/CTASection';
 import PageHero from '../../components/common/PageHero';
 import SeoHead from '../../components/common/SeoHead';
 import FAQSection from '../../components/common/FAQSection';
+import { CoursePriceBlock } from '../../components/pricing/CoursePrice';
 
 const fadeInUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } };
 
@@ -179,7 +180,8 @@ export default function CategoryPage() {
             <div>
               <span className="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Associated Training Program</span>
               <h3 className="text-2xl font-bold font-heading mt-1">{parentCourse.title}</h3>
-              <p className="text-sm text-slate-300 mt-1">{parentCourse.duration} • {parentCourse.fee} • {parentCourse.mode}</p>
+              <p className="text-sm text-slate-300 mt-1">{parentCourse.duration} • {parentCourse.mode}</p>
+              <CoursePriceBlock fee={parentCourse.fee} tone="onDark" className="mt-4 inline-block min-w-[12rem]" />
             </div>
             <Link
               to={contentRepository.getCourseUrl(parentCourse.slug)}

@@ -358,47 +358,6 @@ export default function Footer() {
         {/* ── CLEAN MODERN MOBILE FOOTER (< 768px) ── */}
         <div className="block md:hidden space-y-6">
           
-          {/* 1. Brand & Quick Contact Card */}
-          <div className="flex flex-col items-center text-center gap-3.5 pb-6 border-b border-slate-800">
-            <Link to="/" className="inline-block">
-              <img src="/sky9-logo.svg" alt={safeCompany.name} className="h-9 object-contain" />
-            </Link>
-            
-            <p className="text-xs text-slate-300 leading-relaxed max-w-xs font-normal">
-              {safeCompany.description}
-            </p>
-
-            {/* Social Icons */}
-            <SocialLinksBar className="flex items-center justify-center gap-2 pt-1" buttonClassName="w-8 h-8" />
-
-            {/* Phone & Email Quick Tap Bars */}
-            <div className="grid grid-cols-2 gap-2 w-full pt-2">
-              <a
-                href={`tel:${safeCompany.phone.replace(/\s+/g, '')}`}
-                className="flex items-center justify-center gap-1.5 py-2 px-2 sm:px-3 rounded-xl bg-slate-900 border border-slate-800 text-[11px] min-[360px]:text-[11.5px] font-semibold text-emerald-400 hover:border-emerald-500/50 transition-colors"
-              >
-                <Phone className="w-3.5 h-3.5 shrink-0" />
-                <span className="phone-number">{safeCompany.phone}</span>
-              </a>
-              <a
-                href={`mailto:${safeCompany.email}`}
-                className="flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-slate-900 border border-slate-800 text-[11.5px] font-semibold text-slate-300 hover:border-emerald-500/50 transition-colors"
-              >
-                <Mail className="w-3.5 h-3.5 shrink-0 text-emerald-400" />
-                <span className="truncate">Email Us</span>
-              </a>
-            </div>
-
-            {/* Enroll Now CTA */}
-            <Link
-              to="/contact-us"
-              className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-xs uppercase tracking-wider text-center shadow-lg shadow-emerald-500/25 transition flex items-center justify-center gap-2 mt-1"
-            >
-              <span>Enroll Now</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
           {/* 2. Clean 2-Column Direct Navigation Links Grid */}
           <div className="grid grid-cols-2 gap-6 pb-6 border-b border-slate-800">
             {/* Column 1: Core Training Programs */}
@@ -486,7 +445,48 @@ export default function Footer() {
             <MobileAccordionSection title="Software Testing & ERP" items={[...footerNavigation.softwareTesting.items, ...footerNavigation.erp.items]} />
           </div>
 
-          {/* 4. Pune Campus Address Card */}
+          {/* 1. Brand & Quick Contact Card */}
+          <div className="flex flex-col items-center text-center gap-3.5 pb-6 border-b border-slate-800">
+            <Link to="/" className="inline-block">
+              <img src="/sky9-logo.svg" alt={safeCompany.name} className="h-9 object-contain" />
+            </Link>
+            
+            <p className="text-xs text-slate-300 leading-relaxed max-w-xs font-normal">
+              {safeCompany.description}
+            </p>
+
+            {/* Social Icons */}
+            <SocialLinksBar className="flex items-center justify-center gap-2 pt-1" buttonClassName="w-8 h-8" />
+
+            {/* Phone & Email Quick Tap Bars */}
+            <div className="grid grid-cols-2 gap-2 w-full pt-2">
+              <a
+                href={`tel:${safeCompany.phone.replace(/\s+/g, '')}`}
+                className="flex items-center justify-center gap-1.5 py-2 px-2 sm:px-3 rounded-xl bg-slate-900 border border-slate-800 text-[11px] min-[360px]:text-[11.5px] font-semibold text-emerald-400 hover:border-emerald-500/50 transition-colors"
+              >
+                <Phone className="w-3.5 h-3.5 shrink-0" />
+                <span className="phone-number">{safeCompany.phone}</span>
+              </a>
+              <a
+                href={`mailto:${safeCompany.email}`}
+                className="flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl bg-slate-900 border border-slate-800 text-[11.5px] font-semibold text-slate-300 hover:border-emerald-500/50 transition-colors"
+              >
+                <Mail className="w-3.5 h-3.5 shrink-0 text-emerald-400" />
+                <span className="truncate">Email Us</span>
+              </a>
+            </div>
+
+            {/* Enroll Now CTA */}
+            <Link
+              to="/contact-us"
+              className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-bold text-xs uppercase tracking-wider text-center shadow-lg shadow-emerald-500/25 transition flex items-center justify-center gap-2 mt-1"
+            >
+              <span>Enroll Now</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          {/* Pune Campus Address Card, last item in the mobile footer */}
           <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-slate-300 space-y-1.5">
             <div className="flex items-start gap-2">
               <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />

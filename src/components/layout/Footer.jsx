@@ -20,6 +20,9 @@ const safeCompany = {
   address: companyInfo?.address || '2nd Floor, Shri Nivas Towers, Above Baramati Bank, Pune – 411043, Maharashtra, India',
 };
 
+// Same Google Maps search link the Contact page uses for "Get Directions".
+const mapsUrl = `https://maps.google.com/?q=${encodeURIComponent(safeCompany.address)}`;
+
 const featureBadges = [
   {
     title: 'Classroom & Live Online',
@@ -188,13 +191,19 @@ export default function Footer() {
 
             {/* Contact Details */}
             <div className="pt-4 border-t border-slate-800 flex flex-col gap-3 text-xs text-slate-300">
-              <div className="flex items-start gap-2.5">
+              <a
+                href={mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Open in Google Maps"
+                className="flex items-start gap-2.5 hover:text-emerald-400 transition-colors"
+              >
                 <MapPin className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                <span className="leading-snug text-xs">{safeCompany.address}</span>
-              </div>
+                <span className="leading-snug text-xs underline decoration-slate-600 underline-offset-2 hover:decoration-emerald-400">{safeCompany.address}</span>
+              </a>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <a href={`tel:${safeCompany.phone.replace(/\s+/g, '')}`} className="text-sm font-semibold text-white hover:text-emerald-400 transition-colors">
+                <a href={`tel:${safeCompany.phone.replace(/\s+/g, '')}`} className="text-sm font-bold text-emerald-400 hover:text-emerald-300 transition-colors">
                   {safeCompany.phone}
                 </a>
               </div>
@@ -320,7 +329,7 @@ export default function Footer() {
             <div className="flex flex-col gap-2 pt-3 border-t border-slate-800 text-xs">
               <div className="flex items-center gap-2 text-slate-300">
                 <Phone className="w-3.5 h-3.5 text-emerald-400" />
-                <a href={`tel:${safeCompany.phone.replace(/\s+/g, '')}`} className="hover:text-emerald-400 font-semibold">{safeCompany.phone}</a>
+                <a href={`tel:${safeCompany.phone.replace(/\s+/g, '')}`} className="font-bold text-emerald-400 hover:text-emerald-300">{safeCompany.phone}</a>
               </div>
               <div className="flex items-center gap-2 text-slate-300">
                 <Mail className="w-3.5 h-3.5 text-emerald-400" />
@@ -483,7 +492,15 @@ export default function Footer() {
               <MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
               <div>
                 <span className="font-bold text-white block">Pune Training Facility:</span>
-                <span className="text-[11px] text-slate-400 leading-relaxed">{safeCompany.address}</span>
+                <a
+                  href={mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Open in Google Maps"
+                  className="text-[11px] text-slate-400 leading-relaxed underline decoration-slate-600 underline-offset-2 hover:text-emerald-400 hover:decoration-emerald-400 transition-colors"
+                >
+                  {safeCompany.address}
+                </a>
               </div>
             </div>
             <div className="pt-1.5 border-t border-slate-800/80 text-[11px] text-emerald-400 flex items-center justify-between">

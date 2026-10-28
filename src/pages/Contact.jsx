@@ -92,7 +92,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-bold mb-1 text-slate-900 dark:text-white font-heading">Phone</h4>
-                  <a href={`tel:${companyInfo?.phone?.replace(/\s+/g, '') || '+917319419519'}`} className="text-slate-600 dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors font-medium">
+                  <a href={`tel:${companyInfo?.phone?.replace(/\s+/g, '') || '+917319419519'}`} className="phone-number text-slate-600 dark:text-slate-400 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors font-medium">
                     {companyInfo?.phone || '+91 7 319 419 519'}
                   </a>
                 </div>
@@ -184,7 +184,7 @@ const Contact = () => {
                   className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold text-sm sm:text-base border border-slate-200 dark:border-slate-700 transition"
                 >
                   <Phone className="w-4 h-4 text-emerald-500" />
-                  <span>Call +91 7 319 419 519</span>
+                  <span>Call <span className="phone-number">+91 7 319 419 519</span></span>
                 </a>
               </div>
             </div>

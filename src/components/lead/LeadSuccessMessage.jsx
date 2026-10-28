@@ -136,7 +136,7 @@ export default function LeadSuccessMessage({
           className="w-full sm:w-auto px-5 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs sm:text-sm rounded-xl transition inline-flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/25"
         >
           <PhoneCall className="w-4 h-4 animate-bounce" />
-          <span>Call Admissions: {phone}</span>
+          <span>Call Admissions: <span className="phone-number">{phone}</span></span>
         </motion.a>
         {onReset && (
           <motion.button

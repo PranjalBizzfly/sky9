@@ -73,7 +73,7 @@ const FinalCTA = () => {
                 <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center mr-2.5 group-hover:bg-white/20 transition-colors">
                   <Phone className="w-4 h-4 text-emerald-200" />
                 </div>
-                <span className="font-semibold">{phone}</span>
+                <span className="phone-number font-semibold">{phone}</span>
               </a>
               <a href={`mailto:${email}`} className="flex items-center hover:text-white transition-colors group">
                 <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center mr-2.5 group-hover:bg-white/20 transition-colors">

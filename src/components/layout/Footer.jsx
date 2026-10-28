@@ -203,7 +203,7 @@ export default function Footer() {
               </a>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <a href={`tel:${safeCompany.phone.replace(/\s+/g, '')}`} className="text-sm font-bold text-emerald-400 hover:text-emerald-300 transition-colors">
+                <a href={`tel:${safeCompany.phone.replace(/\s+/g, '')}`} className="phone-number text-sm font-bold text-emerald-400 hover:text-emerald-300 transition-colors">
                   {safeCompany.phone}
                 </a>
               </div>
@@ -329,7 +329,7 @@ export default function Footer() {
             <div className="flex flex-col gap-2 pt-3 border-t border-slate-800 text-xs">
               <div className="flex items-center gap-2 text-slate-300">
                 <Phone className="w-3.5 h-3.5 text-emerald-400" />
-                <a href={`tel:${safeCompany.phone.replace(/\s+/g, '')}`} className="font-bold text-emerald-400 hover:text-emerald-300">{safeCompany.phone}</a>
+                <a href={`tel:${safeCompany.phone.replace(/\s+/g, '')}`} className="phone-number font-bold text-emerald-400 hover:text-emerald-300">{safeCompany.phone}</a>
               </div>
               <div className="flex items-center gap-2 text-slate-300">
                 <Mail className="w-3.5 h-3.5 text-emerald-400" />
@@ -378,7 +378,7 @@ export default function Footer() {
                 className="flex items-center justify-center gap-1.5 py-2 px-2 sm:px-3 rounded-xl bg-slate-900 border border-slate-800 text-[11px] min-[360px]:text-[11.5px] font-semibold text-emerald-400 hover:border-emerald-500/50 transition-colors"
               >
                 <Phone className="w-3.5 h-3.5 shrink-0" />
-                <span className="whitespace-nowrap">{safeCompany.phone}</span>
+                <span className="phone-number">{safeCompany.phone}</span>
               </a>
               <a
                 href={`mailto:${safeCompany.email}`}

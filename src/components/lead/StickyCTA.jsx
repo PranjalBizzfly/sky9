@@ -49,7 +49,7 @@ export default function StickyCTA({ currentCourse = '' }) {
               </div>
               <div>
                 <span className="text-xs font-semibold text-emerald-400 block">Admissions Counseling</span>
-                <span className="text-sm font-bold">{phone} • Pune Hub</span>
+                <span className="text-sm font-bold"><span className="phone-number">{phone}</span> • Pune Hub</span>
               </div>
             </div>
 

@@ -535,3 +535,10 @@ html.light select:-webkit-autofill {
 }
 
 
+
+/* Phone numbers: the body font renders spaces very narrow, so "+91 7 319..."
+   reads as "+917319...". Widen the gaps and keep the number on one line. */
+.phone-number {
+  word-spacing: 0.25em;
+  white-space: nowrap;
+}
